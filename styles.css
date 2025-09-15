@@ -523,7 +523,165 @@ body {
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
+
+/* Large Laptops and Desktops (1200px and up) */
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1400px;
+    }
+    
+    .hero-title {
+        font-size: 4rem;
+    }
+    
+    .section-title {
+        font-size: 3.5rem;
+    }
+    
+    .breed-content {
+        gap: 5rem;
+    }
+    
+    .info-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+    
+    .gallery-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Laptops (992px to 1199px) */
+@media (max-width: 1199px) and (min-width: 992px) {
+    .container {
+        max-width: 960px;
+    }
+    
+    .hero-title {
+        font-size: 3.2rem;
+    }
+    
+    .section-title {
+        font-size: 2.8rem;
+    }
+    
+    .breed-content {
+        gap: 3rem;
+    }
+    
+    .info-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Tablets (768px to 991px) */
+@media (max-width: 991px) and (min-width: 768px) {
+    .container {
+        max-width: 720px;
+        padding: 0 15px;
+    }
+    
+    .nav-menu {
+        gap: 1.5rem;
+    }
+    
+    .hero {
+        padding: 80px 15px 40px;
+    }
+    
+    .hero-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 2.5rem;
+    }
+    
+    .hero-title {
+        font-size: 2.8rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.2rem;
+    }
+    
+    .breed-section {
+        padding: 80px 0;
+    }
+    
+    .section-title {
+        font-size: 2.5rem;
+    }
+    
+    .breed-content {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+    
+    .breed-content.reverse {
+        direction: ltr;
+    }
+    
+    .info-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+    
+    .info-card {
+        padding: 1.5rem;
+    }
+    
+    .breed-details {
+        padding: 2rem;
+    }
+    
+    .comparison-section {
+        padding: 80px 0;
+    }
+    
+    .comparison-header,
+    .comparison-row {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    
+    .comparison-cell {
+        padding: 1.2rem;
+        font-size: 0.9rem;
+    }
+    
+    .gallery-section {
+        padding: 80px 0;
+    }
+    
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+    
+    .gallery-item .image-placeholder {
+        height: 200px;
+    }
+    
+    .footer {
+        padding: 40px 0 15px;
+    }
+    
+    .footer-content {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+}
+
+/* Mobile Landscape and Small Tablets (576px to 767px) */
+@media (max-width: 767px) and (min-width: 576px) {
+    .container {
+        max-width: 540px;
+        padding: 0 15px;
+    }
+    
     .hamburger {
         display: flex;
     }
@@ -539,10 +697,16 @@ body {
         transition: 0.3s;
         box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
         padding: 2rem 0;
+        gap: 1rem;
     }
     
     .nav-menu.active {
         left: 0;
+    }
+    
+    .hero {
+        padding: 70px 15px 30px;
+        min-height: 90vh;
     }
     
     .hero-content {
@@ -553,6 +717,34 @@ body {
     
     .hero-title {
         font-size: 2.5rem;
+        line-height: 1.1;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .hero-buttons {
+        flex-direction: row;
+        justify-content: center;
+        gap: 1rem;
+    }
+    
+    .btn {
+        padding: 0.9rem 1.8rem;
+        font-size: 1rem;
+    }
+    
+    .breed-section {
+        padding: 70px 0;
+    }
+    
+    .section-title {
+        font-size: 2.3rem;
+    }
+    
+    .section-subtitle {
+        font-size: 1.1rem;
     }
     
     .breed-content {
@@ -560,8 +752,37 @@ body {
         gap: 2rem;
     }
     
+    .breed-content.reverse {
+        direction: ltr;
+    }
+    
     .info-grid {
         grid-template-columns: 1fr;
+        gap: 1.2rem;
+    }
+    
+    .info-card {
+        padding: 1.5rem;
+    }
+    
+    .info-card h3 {
+        font-size: 1.2rem;
+    }
+    
+    .breed-details {
+        padding: 1.8rem;
+    }
+    
+    .breed-details h3 {
+        font-size: 1.6rem;
+    }
+    
+    .breed-details h4 {
+        font-size: 1.2rem;
+    }
+    
+    .comparison-section {
+        padding: 70px 0;
     }
     
     .comparison-header,
@@ -571,44 +792,313 @@ body {
     
     .comparison-cell {
         text-align: center;
+        padding: 1rem;
+        font-size: 0.9rem;
     }
     
     .comparison-cell.feature {
         background: rgba(255, 255, 255, 0.2);
         font-weight: 700;
+        font-size: 1rem;
+    }
+    
+    .comparison-cell.breed-name {
+        background: rgba(255, 255, 255, 0.25);
+        font-size: 1.1rem;
+    }
+    
+    .gallery-section {
+        padding: 70px 0;
     }
     
     .gallery-grid {
         grid-template-columns: 1fr;
+        gap: 1.5rem;
     }
     
-    .section-title {
-        font-size: 2.5rem;
+    .gallery-item .image-placeholder {
+        height: 180px;
     }
     
-    .btn {
-        padding: 0.8rem 1.5rem;
-        font-size: 1rem;
+    .footer {
+        padding: 40px 0 15px;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        text-align: center;
     }
 }
 
-@media (max-width: 480px) {
-    .hero-title {
-        font-size: 2rem;
+/* Mobile Portrait (up to 575px) */
+@media (max-width: 575px) {
+    .container {
+        padding: 0 10px;
     }
     
-    .section-title {
+    .hamburger {
+        display: flex;
+    }
+    
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 60px;
+        flex-direction: column;
+        background-color: white;
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+        padding: 1.5rem 0;
+        gap: 0.8rem;
+    }
+    
+    .nav-menu.active {
+        left: 0;
+    }
+    
+    .nav-logo {
+        font-size: 1.3rem;
+    }
+    
+    .nav-logo i {
+        font-size: 1.5rem;
+    }
+    
+    .hero {
+        padding: 60px 10px 20px;
+        min-height: 85vh;
+    }
+    
+    .hero-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 1.5rem;
+    }
+    
+    .hero-title {
         font-size: 2rem;
+        line-height: 1.1;
+        margin-bottom: 1rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
     }
     
     .hero-buttons {
         flex-direction: column;
         align-items: center;
+        gap: 0.8rem;
     }
     
     .btn {
         width: 100%;
-        max-width: 300px;
+        max-width: 280px;
+        padding: 0.8rem 1.5rem;
+        font-size: 0.95rem;
+    }
+    
+    .image-placeholder {
+        height: 300px;
+    }
+    
+    .image-placeholder i {
+        font-size: 3rem;
+    }
+    
+    .image-placeholder p {
+        font-size: 1rem;
+    }
+    
+    .breed-section {
+        padding: 60px 0;
+    }
+    
+    .section-header {
+        margin-bottom: 2.5rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+        margin-bottom: 0.8rem;
+    }
+    
+    .section-subtitle {
+        font-size: 1rem;
+    }
+    
+    .breed-content {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .breed-content.reverse {
+        direction: ltr;
+    }
+    
+    .breed-image .image-placeholder {
+        height: 350px;
+    }
+    
+    .info-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .info-card {
+        padding: 1.2rem;
+    }
+    
+    .info-card i {
+        font-size: 1.5rem;
+    }
+    
+    .info-card h3 {
+        font-size: 1.1rem;
+        margin-bottom: 0.8rem;
+    }
+    
+    .info-card p {
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
+    
+    .breed-details {
+        padding: 1.5rem;
+    }
+    
+    .breed-details h3 {
+        font-size: 1.4rem;
+        margin-bottom: 1rem;
+    }
+    
+    .breed-details h4 {
+        font-size: 1.1rem;
+        margin: 1.5rem 0 0.8rem;
+    }
+    
+    .breed-details p {
+        font-size: 0.9rem;
+        line-height: 1.6;
+    }
+    
+    .characteristics-list li {
+        font-size: 0.9rem;
+        margin-bottom: 0.6rem;
+    }
+    
+    .characteristics-list i {
+        font-size: 1rem;
+        margin-right: 0.8rem;
+    }
+    
+    .comparison-section {
+        padding: 60px 0;
+    }
+    
+    .comparison-header,
+    .comparison-row {
+        grid-template-columns: 1fr;
+    }
+    
+    .comparison-cell {
+        text-align: center;
+        padding: 0.8rem;
+        font-size: 0.85rem;
+    }
+    
+    .comparison-cell.feature {
+        background: rgba(255, 255, 255, 0.2);
+        font-weight: 700;
+        font-size: 0.9rem;
+    }
+    
+    .comparison-cell.breed-name {
+        background: rgba(255, 255, 255, 0.25);
+        font-size: 1rem;
+    }
+    
+    .gallery-section {
+        padding: 60px 0;
+    }
+    
+    .gallery-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .gallery-item .image-placeholder {
+        height: 150px;
+    }
+    
+    .gallery-item .image-placeholder i {
+        font-size: 2rem;
+    }
+    
+    .gallery-item .image-placeholder p {
+        font-size: 0.9rem;
+    }
+    
+    .footer {
+        padding: 30px 0 10px;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+        text-align: center;
+    }
+    
+    .footer-section h3,
+    .footer-section h4 {
+        font-size: 1.1rem;
+    }
+    
+    .footer-section p,
+    .footer-section ul li a {
+        font-size: 0.9rem;
+    }
+    
+    .footer-bottom {
+        padding-top: 1.5rem;
+        font-size: 0.8rem;
+    }
+}
+
+/* Extra Small Devices (up to 375px) */
+@media (max-width: 375px) {
+    .hero-title {
+        font-size: 1.8rem;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+    }
+    
+    .btn {
+        padding: 0.7rem 1.2rem;
+        font-size: 0.9rem;
+    }
+    
+    .info-card {
+        padding: 1rem;
+    }
+    
+    .breed-details {
+        padding: 1.2rem;
+    }
+    
+    .comparison-cell {
+        padding: 0.6rem;
+        font-size: 0.8rem;
+    }
+    
+    .gallery-item .image-placeholder {
+        height: 130px;
     }
 }
 
@@ -632,3 +1122,91 @@ body {
 html {
     scroll-padding-top: 80px;
 }
+
+/* Touch device optimizations */
+.touch-device .btn,
+.touch-device .nav-link,
+.touch-device .gallery-item {
+    min-height: 44px;
+    min-width: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.touch-device .info-card:hover {
+    transform: none;
+}
+
+.touch-device .gallery-item:hover {
+    transform: none;
+}
+
+/* Improved touch targets for mobile */
+@media (max-width: 767px) {
+    .btn {
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .nav-link {
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.5rem 1rem;
+    }
+    
+    .gallery-item {
+        min-height: 44px;
+    }
+    
+    .info-card {
+        transition: transform 0.2s ease;
+    }
+    
+    .info-card:active {
+        transform: scale(0.98);
+    }
+}
+
+/* Viewport optimization */
+@supports (height: 100dvh) {
+    .hero {
+        min-height: 100dvh;
+    }
+}
+
+/* Prevent horizontal scroll on mobile */
+body {
+    overflow-x: hidden;
+}
+
+/* Better text rendering on mobile */
+@media (max-width: 767px) {
+    body {
+        -webkit-text-size-adjust: 100%;
+        text-size-adjust: 100%;
+    }
+}
+
+/* Improved focus states for accessibility */
+.btn:focus,
+.nav-link:focus {
+    outline: 2px solid #ff6b6b;
+    outline-offset: 2px;
+}
+
+/* Better button states for touch */
+@media (max-width: 767px) {
+    .btn:active {
+        transform: scale(0.95);
+    }
+    
+    .gallery-item:active {
+        transform: scale(0.98);
+    }
+}
+

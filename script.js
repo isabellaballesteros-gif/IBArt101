@@ -1,3 +1,6 @@
+let bees = "velcro";
+console.log(bees);
+
 // Mobile Navigation Toggle
 const hamburger = document.querySelector('.hamburger');
 const navMenu = document.querySelector('.nav-menu');
@@ -5,13 +8,42 @@ const navMenu = document.querySelector('.nav-menu');
 hamburger.addEventListener('click', () => {
     hamburger.classList.toggle('active');
     navMenu.classList.toggle('active');
+    
+    // Prevent body scroll when menu is open
+    if (navMenu.classList.contains('active')) {
+        document.body.style.overflow = 'hidden';
+    } else {
+        document.body.style.overflow = 'auto';
+    }
 });
 
 // Close mobile menu when clicking on a link
 document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', () => {
     hamburger.classList.remove('active');
     navMenu.classList.remove('active');
+    document.body.style.overflow = 'auto';
 }));
+
+// Close mobile menu when clicking outside
+document.addEventListener('click', (e) => {
+    if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    }
+});
+
+// Touch-friendly interactions for mobile
+if ('ontouchstart' in window) {
+    // Add touch class to body for touch-specific styles
+    document.body.classList.add('touch-device');
+    
+    // Improve touch targets
+    document.querySelectorAll('.btn, .nav-link, .gallery-item').forEach(element => {
+        element.style.minHeight = '44px';
+        element.style.minWidth = '44px';
+    });
+}
 
 // Smooth scrolling for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -247,3 +279,4 @@ loadingStyle.textContent = `
     }
 `;
 document.head.appendChild(loadingStyle);
+
